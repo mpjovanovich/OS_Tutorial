@@ -24,7 +24,7 @@ int 0x10
 mov al, 'o'
 int 0x10
 
-; Jump th the ucrrent address (infinitely).
+; Jump to the current address (infinitely).
 jmp $
 
 ; Padding and magic BIOS number for boot sector.

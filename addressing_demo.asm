@@ -27,7 +27,7 @@ int 0x10            ; Does this print an X?
 jmp $
 
 the_secret:
-    db "X"
+db "X"
 
 ; Padding and magic BIOS Number.
 times 510-($-$$) db 0

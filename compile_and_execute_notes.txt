@@ -1,0 +1,14 @@
+We can compile usign the nasm program as follows:
+
+nasm input_file.asm -f bin -o output_file.bin
+
+We can include assemblies that we've already written with an "include" directive as such.
+This will replace the include line with the code from the other file:
+
+%include "some_function.asm"
+
+
+The program we're using to run this is qemu. Just call the bin as follows:
+
+qemu output_file.bin
+

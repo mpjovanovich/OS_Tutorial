@@ -7,14 +7,17 @@
 ; (int 10, ah = 0eh) = scrolling teletype BIOS routine
 
 ; Set the high order byte for register ax as part of the 
-; instruction for scrolling teletype.
+; routine for scrolling teletype. We will actually call the
+; interrupt later.
 mov ah, 0x0e
 
-; Set the low order byte to the character to be printed,
-; Then send the interrupt to the "screen" interrupt table
-; address (0x10).
+; Set the low order byte to the character to be printed.
 mov al, 'H'
-int 0x10
+; Call interrupt 10 (we previously set register 'ah' to define
+; which routine we want - teletype.
+int 0x10    
+
+; Repeat...
 mov al, 'e'
 int 0x10
 mov al, 'l'
